@@ -33,10 +33,12 @@ module.exports = grammar(J, {
         repeat(seq($.table_values, optional(","))),
         "]",
       ),
+
     // prettier-ignore
     duration_unit: (_$) => token(choice(
       "ns", "µs", "us", "ms", "sec", "min", "hr", "day", "wk"
     )),
+
     // prettier-ignore
     filesize_unit: (_$) => choice(
       "b", "B",
@@ -58,6 +60,7 @@ module.exports = grammar(J, {
 
     filesize: ($) =>
       seq(field("value", $.number), field("unit", $.filesize_unit)),
+
     duration: ($) =>
       seq(field("value", $.number), field("unit", $.duration_unit)),
 
@@ -68,8 +71,10 @@ module.exports = grammar(J, {
           /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?([Zz]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?/,
         ),
       ),
+
     _nuon_value: ($) =>
       choice($.filesize, $.record, $.table, $.duration, $.date),
+
     comment: (_$) => token(seq("#", /.*/)),
 
     identifier: (_) =>
