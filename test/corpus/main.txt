@@ -1,0 +1,411 @@
+================================================================================
+Table
+================================================================================
+
+[[name, type, size, modified]; [.editorconfig, file, 502b, 2024-05-29T01:55:16.487722900+02:00], [.git, dir, 4096b, 2024-05-29T01:55:16.497728600+02:00], [.gitattributes, file, 266b, 2024-05-29T01:55:16.487722900+02:00], [.github, dir, 0b, 2024-05-29T01:55:16.488245300+02:00], [.gitignore, file, 315b, 2024-05-29T01:55:16.488772100+02:00], [Cargo.lock, file, 1769b, 2024-05-29T02:02:47.651935400+02:00], [Cargo.toml, file, 631b, 2024-05-29T02:02:46.158840400+02:00], [LICENSE, file, 1080b, 2024-05-29T01:55:16.489293200+02:00], [Makefile, file, 3562b, 2024-05-29T02:02:45.893280600+02:00], [Package.swift, file, 1393b, 2024-05-29T01:55:16.489821400+02:00], [README.md, file, 1004b, 2024-05-29T02:02:44.667275+02:00], [Session.vim, file, 928b, 2024-05-29T16:24:06.642918200+02:00], [binding.gyp, file, 385b, 2024-05-29T01:55:16.489821400+02:00], [bindings, dir, 0b, 2024-05-29T01:55:16.492977900+02:00], [build, dir, 4096b, 2024-05-29T16:27:25.463651800+02:00], [grammar.js, file, 2297b, 2024-05-29T16:26:28.314755+02:00], [node_modules, dir, 40960b, 2024-05-29T16:28:00.952564800+02:00], [nuon.dll, file, 96768b, 2024-05-29T16:30:01.156127800+02:00], [package-lock.json, file, 62491b, 2024-05-29T16:28:01.880810700+02:00], [package.json, file, 2442b, 2024-05-29T16:29:27.126690700+02:00], [parser.exp, file, 709b, 2024-05-29T16:30:01.146607500+02:00], [parser.lib, file, 1706b, 2024-05-29T16:30:01.148983+02:00], [parser.obj, file, 11999b, 2024-05-29T16:30:01.124845800+02:00], [pyproject.toml, file, 876b, 2024-05-29T02:02:44.991901900+02:00], [queries, dir, 0b, 2024-05-29T01:55:16.494574900+02:00], [setup.py, file, 1513b, 2024-05-29T01:55:16.494574900+02:00], [src, dir, 4096b, 2024-05-29T13:23:16.475461300+02:00], [target, dir, 0b, 2024-05-29T01:57:52.044358+02:00], [test, dir, 0b, 2024-05-29T01:55:16.496691200+02:00]]
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header
+      (identifier)
+      (identifier)
+      (identifier)
+      (identifier))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))
+    (table_values
+      (string
+        (identifier))
+      (string
+        (identifier))
+      (filesize
+        (number)
+        (filesize_unit))
+      (date))))
+
+================================================================================
+Arrays
+================================================================================
+
+
+[345, 10.1, 2000b, 500000000ns, 10, -10, null, true, false, {stuff: good}]
+
+--------------------------------------------------------------------------------
+
+(document
+  (list
+    (number)
+    (number)
+    (filesize
+      (number)
+      (filesize_unit))
+    (duration
+      (number)
+      (duration_unit))
+    (number)
+    (number)
+    (null)
+    (true)
+    (false)
+    (record
+      (pair
+        (string
+          (identifier))
+        (string
+          (identifier))))))
+
+================================================================================
+String content
+================================================================================
+
+[
+  "",
+  "abc",
+  "def\n",
+  "ghi\t",
+  some_name,
+  "jkl\f",
+  "//",
+  "/**/"
+]
+
+--------------------------------------------------------------------------------
+
+(document
+  (list
+    (string)
+    (string
+      (string_content))
+    (string
+      (string_content
+        (escape_sequence)))
+    (string
+      (string_content
+        (escape_sequence)))
+    (string
+      (identifier))
+    (string
+      (string_content
+        (escape_sequence)))
+    (string
+      (string_content))
+    (string
+      (string_content))))
+
+================================================================================
+Top-level numbers
+================================================================================
+
+-1
+
+--------------------------------------------------------------------------------
+
+(document
+  (number))
+
+================================================================================
+Top-level null
+================================================================================
+
+null
+
+--------------------------------------------------------------------------------
+
+(document
+  (null))
+
+================================================================================
+Comments
+================================================================================
+
+{
+  "a": 1,
+  # A comment in the middle
+  "b": "2", # A inlined commend
+  "c": 3
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (record
+    (pair
+      (string
+        (string_content))
+      (number))
+    (comment)
+    (pair
+      (string
+        (string_content))
+      (string
+        (string_content)))
+    (comment)
+    (pair
+      (string
+        (string_content))
+      (number))))
+
+===========================================
+Multiple top-level records
+===========================================
+
+{}
+{}
+
+---
+
+(document
+  (record)
+  (record))
