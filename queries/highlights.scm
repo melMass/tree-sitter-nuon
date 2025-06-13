@@ -1,27 +1,41 @@
-(pair
-  key: (_) @string.special.key)
-
-(string) @string
-
-(filesize unit: _ @variable.parameter)
-(duration unit: _ @variable.parameter)
-
-(table
-  head:(_) @constant)
-
-(number) @number
-(date) @constant
 [
-  (null)
   (true)
   (false)
-] @constant.builtin
+] @boolean
 
-(escape_sequence) @escape
+(null) @constant.builtin
+
+(number) @number
+
+(pair
+  key: (string) @property)
+
+(pair
+  value: (string) @string)
+
+(table_values
+  (string) @string)
+
+(table_header
+  (identifier) @property)
+
 [
-    ","
-    ";"
+  ","
+  ":"
 ] @punctuation.delimiter
-[":"] @punctuation.special
 
-(comment) @comment
+[
+  "["
+  "]"
+  "{"
+  "}"
+] @punctuation.bracket
+
+("\"" @conceal
+  (#set! conceal ""))
+
+(escape_sequence) @string.escape
+
+((escape_sequence) @conceal
+  (#eq? @conceal "\\\"")
+  (#set! conceal "\""))
