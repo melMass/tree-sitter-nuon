@@ -6,7 +6,13 @@
     "license": "MIT",
     "main": "bindings/node",
     "types": "bindings/node",
-    "keywords": ["incremental", "parsing", "tree-sitter", "nushell", "nuon"],
+    "keywords": [
+        "incremental",
+        "parsing",
+        "tree-sitter",
+        "nushell",
+        "nuon"
+    ],
     "files": [
         "grammar.js",
         "binding.gyp",
@@ -16,9 +22,9 @@
         "src/**"
     ],
     "dependencies": {
-        "node-addon-api": "^8.0.0",
-        "node-gyp-build": "^4.8.0",
-        "tree-sitter-json": "^0.21.0"
+        "node-addon-api": "^8.3.1",
+        "node-gyp-build": "^4.8.4",
+        "tree-sitter-json": "^0.24.8"
     },
     "peerDependencies": {
         "tree-sitter": "^0.21.0"
@@ -46,7 +52,9 @@
     "tree-sitter": [
         {
             "scope": "source.nuon",
-            "file-types": ["nuon"],
+            "file-types": [
+                "nuon"
+            ],
             "highlights": "queries/highlights.scm"
         }
     ],
@@ -84,7 +92,9 @@
                 "always",
                 {
                     "line": {
-                        "markers": ["/"]
+                        "markers": [
+                            "/"
+                        ]
                     }
                 }
             ]

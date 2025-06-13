@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "nuon",
+      "camelcase": "Nuon",
+      "title": "Nuon",
+      "scope": "source.nuon",
+      "file-types": [
+        "nuon"
+      ],
+      "injection-regex": "^nuon$",
+      "class-name": "TreeSitterNuon"
+    }
+  ],
+  "metadata": {
+    "version": "0.21.0",
+    "license": "MIT",
+    "description": " NUON grammar for tree-sitter ",
+    "authors": [
+      {
+        "name": " Mel Massadian ",
+        "email": "mel@melmassadian.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/melMass/tree-sitter-nuon"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
