@@ -52,6 +52,7 @@
   {
     "type": "document",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -182,30 +183,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
           "type": "string_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "string_content",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "escape_sequence",
           "named": true
         }
       ]
@@ -421,7 +411,8 @@
   },
   {
     "type": "comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "date",
@@ -570,6 +561,10 @@
   {
     "type": "pib",
     "named": false
+  },
+  {
+    "type": "string_content",
+    "named": true
   },
   {
     "type": "tB",
