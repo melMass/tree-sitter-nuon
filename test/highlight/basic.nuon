@@ -1,0 +1,53 @@
+# Test booleans and null values
+true
+# <- boolean
+false
+# <- boolean
+null
+# <- constant.builtin
+
+# Test numbers
+42
+# <- number
+-17
+# <- number
+3.14159
+# <- number
+
+# Test strings and identifiers
+"hello world"
+# <- conceal
+# ^ string
+#           ^ conceal
+unquoted_string
+# <- string
+
+# Test record with key-value pairs
+{
+# <- punctuation.bracket
+  "name": "value",
+  #^ string
+  #     ^ punctuation.delimiter
+  #        ^ string
+  #              ^ punctuation.delimiter
+  "count": 42,
+  #^ string
+  #      ^ punctuation.delimiter
+  #        ^ number
+  #          ^ punctuation.delimiter
+  "active": true
+  #^ string
+  #       ^ punctuation.delimiter
+  #         ^ boolean
+}
+# <- punctuation.bracket
+
+# Test array
+[1, 2, 3]
+# <- punctuation.bracket
+#^ number
+# ^ punctuation.delimiter
+#   ^ number
+#    ^ punctuation.delimiter
+#      ^ number
+#       ^ punctuation.bracket

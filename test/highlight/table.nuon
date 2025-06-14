@@ -1,0 +1,27 @@
+# Test table structure with various data types
+[
+# <- punctuation.bracket
+[name, type, size, modified];
+# <- punctuation.bracket
+#^ property
+#    ^ punctuation.delimiter
+#      ^ property
+#        ^ property
+#          ^ punctuation.delimiter
+#            ^ property
+#                ^ punctuation.delimiter
+#                  ^ property
+#                          ^ punctuation.bracket
+#                           ^ punctuation.delimiter
+[.editorconfig, file, 502b, 2024-05-29T01:55:16+02:00],
+# <- punctuation.bracket
+#^ string
+#             ^ punctuation.delimiter
+#               ^ string
+#                   ^ punctuation.delimiter
+#                     ^ number
+#                        ^ string.special.symbol
+#                         ^ punctuation.delimiter
+#                           ^ string.special
+]
+# <- punctuation.bracket
