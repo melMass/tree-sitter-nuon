@@ -3,25 +3,25 @@
   (false)
 ] @boolean
 
+(string) @string
+
+(comment) @comment
+
 (null) @constant.builtin
 
 (number) @number
 
-(pair
-  key: (string) @property)
-
-(pair
-  value: (string) @string)
-
-(table_values
-  (string) @string)
 
 (table_header
   (identifier) @property)
 
+(date) @string.special
+(filesize_unit) @string.special.symbol
+
 [
   ","
   ":"
+  ";"
 ] @punctuation.delimiter
 
 [
