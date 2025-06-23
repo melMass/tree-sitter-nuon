@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-nuon",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "NUON grammar for tree-sitter",
   "repository": "github:melMass/tree-sitter-nuon",
   "license": "MIT",

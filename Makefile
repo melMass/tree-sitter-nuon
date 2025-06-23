@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-nuon
 HOMEPAGE_URL := https://github.com/melmass/tree-sitter-nuon
-VERSION := 0.21.0
+VERSION := 0.22.0
 
 # repository
 SRC_DIR := src

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-nuon
-        VERSION "0.21.0"
+        VERSION "0.22.0"
         DESCRIPTION " NUON grammar for tree-sitter "
         HOMEPAGE_URL "https://github.com/melmass/tree-sitter-nuon"
         LANGUAGES C)
