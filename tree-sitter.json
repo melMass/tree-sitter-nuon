@@ -10,7 +10,8 @@
         "nuon"
       ],
       "injection-regex": "^nuon$",
-      "class-name": "TreeSitterNuon"
+      "class-name": "TreeSitterNuon",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
