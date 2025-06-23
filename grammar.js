@@ -9,6 +9,8 @@ const J = require("tree-sitter-json/grammar");
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+console.log(J);
+
 // there is probably a better way
 // maybe alias?
 delete J.grammar.rules.object;
@@ -18,6 +20,11 @@ module.exports = grammar(J, {
 
   extras: ($, original) => [...original, /\s/, $.comment],
   word: ($) => $.identifier,
+
+  // conflicts: ($) => [[$.table_header, $._value]],
+  // conflicts: ($) => [[$.string, $._value]],
+
+  supertypes: ($) => [$._value],
 
   rules: {
     document: ($) => repeat(choice($._value)),
@@ -81,6 +88,9 @@ module.exports = grammar(J, {
       token(field("variable", /[A-Za-z_\.\-]+[A-Za-z0-9_\.\-]*/)),
 
     string: ($, original) => choice(original, prec(1, $.identifier)),
+
+    // document: ($) => repeat($._value),
+    //
     _value: ($) =>
       choice(
         $.list,
@@ -93,9 +103,60 @@ module.exports = grammar(J, {
       ),
 
     list: ($) => seq("[", commaSep($._value), "]"),
+    // _value: ($, original) =>
+    //   choice(prec(1, $._nuon_value), original, $.identifier),
+    //
 
     // object definition from json
     record: ($) => seq("{", commaSep($.pair), "}"),
+    //
+    // pair: ($) => seq(field("key", $.string), ":", field("value", $._value)),
+    //
+    // array: ($) => seq("[", commaSep($._value), "]"),
+    //
+    // string: ($) => choice(seq('"', '"'), seq('"', $._string_content, '"')),
+    //
+    // _string_content: ($) =>
+    //   repeat1(choice($.string_content, $.escape_sequence)),
+    //
+    // string_content: (_) => token.immediate(prec(1, /[^\\"\n]+/)),
+    //
+    // escape_sequence: (_) =>
+    //   token.immediate(seq("\\", /(\"|\\|\/|b|f|n|r|t|u)/)),
+    //
+    // number: (_) => {
+    //   const decimalDigits = /\d+/;
+    //   const signedInteger = seq(optional("-"), decimalDigits);
+    //   const exponentPart = seq(choice("e", "E"), signedInteger);
+    //
+    //   const decimalIntegerLiteral = seq(
+    //     optional("-"),
+    //     choice("0", seq(/[1-9]/, optional(decimalDigits))),
+    //   );
+    //
+    //   const decimalLiteral = choice(
+    //     seq(
+    //       decimalIntegerLiteral,
+    //       ".",
+    //       optional(decimalDigits),
+    //       optional(exponentPart),
+    //     ),
+    //     seq(decimalIntegerLiteral, optional(exponentPart)),
+    //   );
+    //
+    //   return token(decimalLiteral);
+    // },
+    //
+    // true: (_) => "true",
+    //
+    // false: (_) => "false",
+    //
+    // null: (_) => "null",
+    //
+    // comment: (_) =>
+    //   token(
+    //     choice(seq("//", /.*/), seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
+    //   ),
   },
 });
 
