@@ -9,38 +9,38 @@ const J = require("tree-sitter-json/grammar");
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-// there is probably a better way
-// maybe alias?
-delete J.grammar.rules.object;
+// Do not inherit object from the base config
+J.grammar.rules.object = undefined;
 
 module.exports = grammar(J, {
-  name: "nuon",
+	name: "nuon",
 
-  extras: ($, original) => [...original, /\s/, $.comment],
-  word: ($) => $.identifier,
+	extras: ($, original) => [...original, /\s/, $.comment],
+	word: ($) => $.identifier,
 
-  rules: {
-    document: ($) => repeat(choice($._value)),
+	rules: {
+		document: ($) => repeat(choice($._value)),
 
-    table_header: ($) => prec(2, seq("[", commaSep1($.identifier), "]", ";")),
+		table_header: ($) => prec(2, seq("[", commaSep1($.identifier), "]", ";")),
 
-    table_values: ($) => seq("[", commaSep($._value), "]"),
+		table_values: ($) => seq("[", commaSep($._value), "]"),
 
-    table: ($) =>
-      seq(
-        "[",
-        field("head", $.table_header),
-        repeat(seq($.table_values, optional(","))),
-        "]",
-      ),
+		table: ($) =>
+			seq(
+				"[",
+				field("head", $.table_header),
+				repeat(seq($.table_values, optional(","))),
+				"]",
+			),
 
-    // prettier-ignore
-    duration_unit: (_$) => token(choice(
-      "ns", "µs", "us", "ms", "sec", "min", "hr", "day", "wk"
-    )),
+		// prettier-ignore
+		// biome-ignore format
+		duration_unit: (_$) =>
+			token(choice("ns", "µs", "us", "ms", "sec", "min", "hr", "day", "wk")),
 
-    // prettier-ignore
-    filesize_unit: (_$) => choice(
+		// prettier-ignore
+		// biome-ignore format: looks ugly
+		filesize_unit: (_$) => choice(
       "b", "B",
 
       "kb", "kB", "Kb", "KB",
@@ -58,45 +58,48 @@ module.exports = grammar(J, {
       "eib", "eiB", "eIB", "eIb", "Eib", "EIb", "EIB",
     ),
 
-    filesize: ($) =>
-      seq(field("value", $.number), field("unit", $.filesize_unit)),
+		binary: (_$) =>
+			seq("0x", /\[/, repeat1(seq(/[0-9a-fA-F]{2}/, optional(","))), /\]/),
 
-    duration: ($) =>
-      seq(field("value", $.number), field("unit", $.duration_unit)),
+		filesize: ($) =>
+			seq(field("value", $.number), field("unit", $.filesize_unit)),
 
-    date: (_$) =>
-      token(
-        choice(
-          /[0-9]{4}-[0-9]{2}-[0-9]{2}/i,
-          /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?([Zz]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?/,
-        ),
-      ),
+		duration: ($) =>
+			seq(field("value", $.number), field("unit", $.duration_unit)),
 
-    _nuon_value: ($) =>
-      choice($.filesize, $.record, $.table, $.duration, $.date),
+		_bool: ($) => choice($.true, $.false),
+		date: (_$) =>
+			token(
+				choice(
+					/[0-9]{4}-[0-9]{2}-[0-9]{2}/i,
+					/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?([Zz]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?/,
+				),
+			),
 
-    comment: (_$) => token(seq("#", /.*/)),
+		_nuon_value: ($) =>
+			choice(
+				$.filesize,
+				$.record,
+				$.table,
+				$.duration,
+				$._bool,
+				$.date,
+				$.binary,
+			),
 
-    identifier: (_) =>
-      token(field("variable", /[A-Za-z_\.\-]+[A-Za-z0-9_\.\-]*/)),
+		comment: (_$) => token(seq("#", /.*/)),
 
-    string: ($, original) => choice(original, prec(1, $.identifier)),
-    _value: ($) =>
-      choice(
-        $.list,
-        $.number,
-        $.string,
-        $.true,
-        $.false,
-        $.null,
-        $._nuon_value,
-      ),
+		identifier: (_) =>
+			token(field("variable", /[A-Za-z_\.\-]+[A-Za-z0-9_\.\-]*/)),
 
-    list: ($) => seq("[", commaSep($._value), "]"),
+		string: ($, original) => choice(original, prec(1, $.identifier)),
+		_value: ($) => choice($.list, $.number, $.string, $.null, $._nuon_value),
 
-    // object definition from json
-    record: ($) => seq("{", commaSep($.pair), "}"),
-  },
+		list: ($) => seq("[", commaSep($._value), "]"),
+
+		// object definition from json
+		record: ($) => seq("{", commaSep($.pair), "}"),
+	},
 });
 
 /**
@@ -107,8 +110,11 @@ module.exports = grammar(J, {
  * @return {SeqRule}
  *
  */
+// function commaSep1(rule) {
+// 	return seq(rule, optional(choice(/,/, /\s/)), commaSep(rule));
+// }
 function commaSep1(rule) {
-  return seq(rule, repeat(seq(",", rule)));
+	return seq(rule, repeat(seq(optional(","), rule)));
 }
 
 /**
@@ -120,5 +126,5 @@ function commaSep1(rule) {
  *
  */
 function commaSep(rule) {
-  return optional(commaSep1(rule));
+	return optional(commaSep1(rule));
 }

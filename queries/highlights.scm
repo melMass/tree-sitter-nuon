@@ -11,6 +11,7 @@
 
 (number) @number
 
+(binary) @string.special
 
 (table_header
   (identifier) @property)

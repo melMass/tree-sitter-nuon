@@ -1,0 +1,67 @@
+====
+mixed types
+====
+
+# Some sample nuon values
+[
+    # The nuon compact table format
+    [[a, nuon, table]; [1, 2, 3], [4, 5, 6]],
+
+    # A filesize
+    100kib,
+
+    # A duration
+    100sec
+
+    # A boolean
+    true,
+
+    # A record
+    {name: "Bobby", age: 99}
+
+    # Binary data
+    0x[11, ff, ee, 1f]
+]
+
+-----------------------------------------------------------
+
+(document
+  (comment)
+  (list
+    (comment)
+    (table
+      (table_header
+        (identifier)
+        (identifier)
+        (identifier))
+      (table_values
+        (number)
+        (number)
+        (number))
+      (table_values
+        (number)
+        (number)
+        (number)))
+    (comment)
+    (filesize
+      (number)
+      (filesize_unit))
+    (comment)
+    (duration
+      (number)
+      (duration_unit))
+    (comment)
+    (true)
+    (comment)
+    (record
+      (pair
+        (string
+          (identifier))
+        (string
+          (string_content)))
+      (pair
+        (string
+          (identifier))
+        (number)))
+    (comment)
+    (binary)))

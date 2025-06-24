@@ -4,6 +4,10 @@
     "named": true,
     "subtypes": [
       {
+        "type": "binary",
+        "named": true
+      },
+      {
         "type": "date",
         "named": true
       },
@@ -48,6 +52,11 @@
         "named": true
       }
     ]
+  },
+  {
+    "type": "binary",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "document",
@@ -274,6 +283,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "0x",
     "named": false
   },
   {
